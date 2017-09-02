@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<HTML>
+<HEAD>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="Keywords" content="webMIDIAPI,WebMidiApi,webmidiapi">
+	<title>Send And Receive</title>
+	<script type="text/javascript" src="js/mywebmidiapi.js"></script>
+	<script type="text/javascript" src="js/sendreceive.js"></script>
+	<link rel="stylesheet" media="screen" href="css/sendreceive.css">
+
+
+<!--	-------------------------------------------------------------------- -->
+</HEAD>
+<body bgcolor="#ccccff" text="#000000" link="#0000ff" vlink="#ff00ff" 
+alink="#ff0000" style="margin-right:28px;margin-left:28px;margin-top:20px;">
+<br>
+<!--	-------------------------------------------------------------------- -->
+<center><h2>Send And Receive MIDI<h2></center>
+<br>
+
+<!--	------------------------------------------------------------------ -->
+<div id="sans" style="background-color: #bde9ba; position: absolute; top:28px; left:100px;">
+<table>
+<tr><td colspan="3" align="center"><b>Select MIDI Port</b></td></tr>
+<tr><td>Input Device:
+<form name="input_device_select">
+<select name="ids" 
+onChange="inputDeviceSelect(this); input.onmidimessage = handleMIDIMessageGroundpiano;">
+<option value="0">No Device
+</select>
+</form>
+</td><td width="40"></td><td>
+Output Device:
+<form name="output_device_select">
+<select name="ids" onChange="outputDeviceSelect(this);">
+<option value="0">No Device
+</select>
+</form>
+</td></tr></table>
+</div>
+<!--	-------------------------------------------------------------------- -->
+
+<br>
+
+<div id="sans">
+Inout Monitor:
+</div>
+<pre id="log">
+</pre>
+
+<!--	-------------------------------------------------------------------- -->
+<br>
+<div id="sans">
+Output MIDI:<br>
+<textarea name="contests" cols="128" rows="4" id="doc_ment0"></textarea> 
+<button onclick="sendmidi_id(ex_id0)">send</button><br>
+<textarea name="contests" cols="128" rows="4" id="doc_ment1"></textarea> 
+<button onclick="sendmidi_id(ex_id1)">send</button><br>
+<textarea name="contests" cols="128" rows="4" id="doc_ment2"></textarea>
+<button onclick="sendmidi_id(ex_id2)">send</button><br> 
+<!--	------------------------------------------------------------------ -->
+
+<!--	-------------------------------------------------------------------- -->
+<br>
+
+</BODY>
+</HTML>
