@@ -10,7 +10,7 @@
 - When you open this page you may have following view.<br>
 
 <br>
-<img src="SendReceive.png">
+<img src="sendreceive.png">
 <br>
 
 - In the first block, MIDI messages from a musical instrument are displayed.
