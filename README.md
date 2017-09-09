@@ -6,8 +6,8 @@
 - In the case of Bulk dump request, After you send Bulk dump request to a musical instument, You may receive Bulk dump from musical instrument
 
 - These programs use Web MIDI API
-- You can use this program to accsess as below. https://mikatahara.github.io/SendReceive/<br>
-- When you open this page you may have following view.<br>
+- You can use this program to acsess as below. https://mikatahara.github.io/SendReceive/<br>
+- When you open this page you have following view.<br>
 
 <br>
 <img src="sendreceive.png">
