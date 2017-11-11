@@ -1,4 +1,4 @@
-const LineNum=11x8;
+const LineNum=88;
 var strlog=new Array(LineNum);
 var str=null;
 var mlognum=0;
