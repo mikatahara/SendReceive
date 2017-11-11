@@ -21,7 +21,6 @@ function makeMassage( event ) {
 				str += " ";
 			}
 		}
-		str ="\n";
 }
 
 function handleMIDIMessage2( event ) {
@@ -30,8 +29,11 @@ function handleMIDIMessage2( event ) {
 	makeMassage( event );
 	strlog[mlognum]=str;
 
+	log.innerText="";
+
 	for(i=0; i<LineNum; i++){
 		log.innerText += strlog[i];
+		log.innerText+="\n";
 	}
 
 	if(mlognum<LineNum-1) mlognum++;
