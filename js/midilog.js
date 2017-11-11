@@ -1,4 +1,4 @@
-static var LineNum=11;
+const LineNum=11;
 var strlog=new Array(LineNum);
 var str=null;
 var mlognum=0;
