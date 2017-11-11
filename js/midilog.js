@@ -1,4 +1,4 @@
-const LineNum=11;
+const LineNum=11x8;
 var strlog=new Array(LineNum);
 var str=null;
 var mlognum=0;
@@ -32,8 +32,9 @@ function handleMIDIMessage2( event ) {
 	log.innerText="";
 
 	for(i=0; i<LineNum; i++){
+		if(i!=0 && i%8==0) log.innerText+="\n";
 		log.innerText += strlog[i];
-		log.innerText+="\n";
+		log.innerText+=" ";
 	}
 
 	if(mlognum<LineNum-1) mlognum++;
