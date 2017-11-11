@@ -26,6 +26,8 @@
 	font-family:Courier New, monospace;
 	font-size:1.0em;
 	overflow:auto;
+	position: relative;
+
 }
 
 #tlog {
