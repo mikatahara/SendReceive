@@ -1,7 +1,7 @@
 
 
 //add for Page 18, MIDI message monitor
-function handleMIDIMessage1( event ) {
+function handleMIDIMessage2( event ) {
 	var str=null;
 	var i,k;
 

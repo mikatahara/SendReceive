@@ -14,11 +14,14 @@ window.onload = function()
 	var hoge = setInterval(function() {
 	    //wait webmidi start
 		if (inputs != null) {
-		setInputMenuID(document.input_device_select.ids);
-		setOutputMenuID(document.output_device_select.ids);
-		if(input_menu_id!=null) setInputDeviceSelect();
-		if(output_menu_id!=null) setOutputDeviceSelect();
-		clearInterval(hoge);
+			setInputMenuID(document.input_device_select.ids);
+			setOutputMenuID(document.output_device_select.ids);
+			if(input_menu_id!=null){ setInputDeviceSelect();
+				input.onmidimessage = handleMIDIMessage2;
+			}
+			if(output_menu_id!=null) setOutputDeviceSelect();
+			clearInterval(hoge);
+
 		}
 	}, 200);
 
