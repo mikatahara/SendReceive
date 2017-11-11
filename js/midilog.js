@@ -1,6 +1,9 @@
-var strlog[11]=["","","","","","","","","","",""];
+static var LineNum=11;
+var strlog=new Array(LineNum);
 var str=null;
 var mlognum=0;
+
+for(var i=0; i<LineNum; i++) strlog[i]="";
 
 //add for Page 18, MIDI message monitor
 function makeMassage( event ) {
@@ -27,14 +30,14 @@ function handleMIDIMessage2( event ) {
 	makeMassage( event );
 	strlog[mlognum]=str;
 
-	for(i=0; i<11; i++){
+	for(i=0; i<LineNum; i++){
 		log.innerText += strlog[i];
 	}
 
-	if(mlognum<10) mlognum++;
+	if(mlognum<LineNum-1) mlognum++;
 
 	else {
-		for(i=0; i<10; i++){
+		for(i=0; i<LineNum-1; i++){
 			strlog[i]=strlog[i+1];
 		}
 	}
