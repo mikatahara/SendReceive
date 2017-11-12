@@ -59,7 +59,7 @@ function shiftColumn()
 {
 	var i,j;
 	for(i=0; i<LineNum-1; i++){
-		for(j=0; j<ColumnNum; j++)
+		for(j=0; j<ColumnNum; j++){
 			strlog[i][j]=strlog[i+1][j];
 		}
 	}
