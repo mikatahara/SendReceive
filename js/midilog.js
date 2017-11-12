@@ -34,7 +34,7 @@ function printLog()
 	log.innerText="";
 	for(i=0; i<LineNum; i++){
 		for(j=0; j<ColumnNum;j++){
-			log.innerText += strlog[i];
+			log.innerText += strlog[i][j];
 			log.innerText+=" ";
 		}
 		log.innerText+="\n";
