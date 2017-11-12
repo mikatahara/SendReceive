@@ -37,7 +37,7 @@ function handleMIDIMessage2( event ) {
 	}
 	var targetY = $(log).offset().top+$(log).height();
 	$(log).scrollTop(targetY);
-	var targetX = $(log).get(0).selectionStart;
+	var targetX = $(this).get(0).selectionStart;
 
 }
 
