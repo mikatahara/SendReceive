@@ -29,11 +29,15 @@ function makeMassage( event ) {
 
 function printLog()
 {
+	var i, j;
+
 	log.innerText="";
 	for(i=0; i<LineNum; i++){
-		if(i!=0 && i%8==0) log.innerText+="\n";
-		log.innerText += strlog[i];
-		log.innerText+=" ";
+		for(j=0; j<ColumnNum;j++){
+			log.innerText += strlog[i];
+			log.innerText+=" ";
+		}
+		log.innerText+="\n";
 	}
 }
 
@@ -54,10 +58,11 @@ function shiftLog()
 
 function handleMIDIMessage2( event ) {
 	var i;
+	var ml1,mc1;
 
 	makeMassage( event );
 
-	if(str[0]=="f"){
+/*	if(str[0]=="f"){
 		if(mlognum>LineNum-8){
 			while(mlognum!=LineNum-8){
 				shiftLog();
@@ -74,10 +79,15 @@ function handleMIDIMessage2( event ) {
 	} else {
 		strlog[mlognum]=str;
 	}
+*/
+
+	ml1 = Math.floor(mlognum/ColumnNum);
+	mc1 = mlognum-ml1*ColumnNum;
+	strlog[ml1][mc1]=str;
 
 	printLog();
 
-	if(mlognum<LineNum-1){
+	if(mlognum<LineNum*ColumnNum-1){
 		mlognum++;
 	} else {
 		shiftLog();
