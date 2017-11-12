@@ -19,7 +19,7 @@ function makeMassage( event ) {
 				str += event.data[i].toString(16);
 				str += " ";
 				if(k>=40){
-					log.innerText+="\n";
+					str+="\n";
 					k=0;
 				}
 			}
