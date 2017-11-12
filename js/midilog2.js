@@ -34,7 +34,7 @@ function handleMIDIMessage2( event ) {
 		log.innerText+="\n";
 		mlognum=0;
 //		var targetY = $('#log').offset().top;
-		var targetY = $(log).height();
+		var targetY = $(log).offset().top+$(log).height();
 		$(log).scrollTop(targetY);
 	}
 
