@@ -1,9 +1,13 @@
-const LineNum=88;
+const LineNum=11;
+const ColumnNum=12;
 var strlog=new Array(LineNum);
 var str=null;
 var mlognum=0;
 
-for(var i=0; i<LineNum; i++) strlog[i]="";
+for(var i=0; i<LineNum; i++){
+	strlog[i]=new Array(ColumnNum);
+	for(var j=0; j<ColumnNum; j++) strlog[i][j]="";
+}
 
 //add for Page 18, MIDI message monitor
 function makeMassage( event ) {
@@ -23,26 +27,60 @@ function makeMassage( event ) {
 		}
 }
 
-function handleMIDIMessage2( event ) {
-	var i;
-
-	makeMassage( event );
-	strlog[mlognum]=str;
-
+function printLog()
+{
 	log.innerText="";
-
 	for(i=0; i<LineNum; i++){
 		if(i!=0 && i%8==0) log.innerText+="\n";
 		log.innerText += strlog[i];
 		log.innerText+=" ";
 	}
+}
 
-	if(mlognum<LineNum-1) mlognum++;
+function shiftLog()
+{
+	var i;
+	var ml1,mc1,ml2,mc2;
 
-	else {
-		for(i=0; i<LineNum-1; i++){
-			strlog[i]=strlog[i+1];
+	for(i=0; i<LineNum*ColumnNum-1; i++){
+		ml1 = Math.floor(i/ColumnNum);
+		mc1 = i-ml1*ColumnNum;
+		ml2 = Math.floor((i+1)/ColumnNum);
+		mc2 = (i+1)-ml2*ColumnNum;
+		strlog[ml1][mc1]=strlog[ml2][mc2];
+	}
+}
+
+
+function handleMIDIMessage2( event ) {
+	var i;
+
+	makeMassage( event );
+
+	if(str[0]=="f"){
+		if(mlognum>LineNum-8){
+			while(mlognum!=LineNum-8){
+				shiftLog();
+				mlognum--;
+			}
+		} else {
+			while((mlognum%8)!=0){
+				strlog[mlognum]="";
+				mlognum++;
+				if(mlognum<LineNum-1) mlognum++;
+			}
 		}
+		strlog[mlognum]=str;
+	} else {
+		strlog[mlognum]=str;
+	}
+
+	printLog();
+
+	if(mlognum<LineNum-1){
+		mlognum++;
+	} else {
+		shiftLog();
 	}
 
 }
