@@ -18,6 +18,10 @@ function makeMassage( event ) {
 				if(event.data[i]<0x10) str += "0";
 				str += event.data[i].toString(16);
 				str += " ";
+				if(k>=40){
+					log.innerText+="\n";
+					k=0;
+				}
 			}
 		}
 }
