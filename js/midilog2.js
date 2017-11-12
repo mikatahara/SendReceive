@@ -41,7 +41,7 @@ function handleMIDIMessage2( event ) {
 		if(mlognum>=ColumnNum){
 			log.innerText+="\n";
 			mlognum=0;
-/		}
+		}
 	}
 
 	var targetY = $(log).offset().top+$(log).height();
