@@ -35,8 +35,8 @@ function handleMIDIMessage2( event ) {
 		mlognum=0;
 		var targetY = $('#log').offset().top;
 		var target2Y = $(log).offset().top;
-		var target3Y = $('#log').offset().bottom;
-		var target4Y = $(log).offset().bottom;
+		var target3Y = $('#log').height();
+		var target4Y = $(log).height();
 	}
 
 
