@@ -7,9 +7,9 @@
 	<title>Send And Receive</title>
 	<script type="text/javascript" src="https://mikatahara.github.io/mywebmidiapi.js"></script>
 	<script type="text/javascript" src="js/sendreceive.js"></script>
-	<script type="text/javascript" src="js/midilog.js"></script>
+	<script type="text/javascript" src="js/midilog2.js"></script>
+	<script src="http://code.jquery.com/jquery-1.11.2.js"></script>
 	<link rel="stylesheet" media="screen" href="https://mikatahara.github.io/mywebmidiapi.css">
-
 
 <!--	-------------------------------------------------------------------- -->
 </HEAD>
@@ -18,7 +18,13 @@ alink="#ff0000" style="margin-right:28px;margin-left:28px;margin-top:20px;">
 <br>
 <!--	-------------------------------------------------------------------- -->
 <center><h2>Send And Receive MIDI<h2></center>
+
 <br>
+<div id="sans">
+Inout Monitor:
+</div>
+<pre id="log">
+</pre>
 
 <!--	------------------------------------------------------------------ -->
 <div id="sans" style="background-color: #bde9ba; position: absolute; top:28px; left:100px;">
@@ -43,15 +49,6 @@ Output Device:
 
 <br>
 
-<div id="sans">
-Inout Monitor:
-</div>
-<pre id="log">
-</pre>
-<br>
-<pre id="sysex">
-</pre>
-
 <!--	-------------------------------------------------------------------- -->
 <br>
 <div id="sans">
@@ -63,9 +60,6 @@ Output MIDI:<br>
 <textarea name="contests" cols="128" rows="4" id="doc_ment2"></textarea>
 <button onclick="sendmidi_id(ex_id2)">send</button><br> 
 <!--	------------------------------------------------------------------ -->
-
-<!--	-------------------------------------------------------------------- -->
-<br>
 
 </BODY>
 <!--	-------------------------------------------------------------------- -->
