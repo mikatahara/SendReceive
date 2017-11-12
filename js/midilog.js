@@ -6,7 +6,7 @@ var mlognum=0;
 
 for(var i=0; i<LineNum; i++){
 	strlog[i]=new Array(ColumnNum);
-	for(var j=0; j<ColumnNum; j++) strlog[i][j]="";
+	for(var j=0; j<ColumnNum; j++) strlog[i][j]='';
 }
 
 //add for Page 18, MIDI message monitor
