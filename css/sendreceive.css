@@ -26,19 +26,6 @@
 	font-family:Courier New, monospace;
 	font-size:1.0em;
 	overflow:auto;
-	position: relative;
-}
-
-#sysex {
-	width:100%;
-	height:100px;
-	margin: 0 auto;
-	background-color:#eee;
-	white-space:pre;
-	font-family:Courier New, monospace;
-	font-size:1.0em;
-	overflow:auto;
-	position: relative;
 }
 
 #tlog {
