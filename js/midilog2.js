@@ -30,10 +30,16 @@ function handleMIDIMessage2( event ) {
 	log.innerText+=str;
 	log.innerText+=" ";
 	mlognum++;
-	if(mlognum>ColumnNum){
+	if(mlognum>=ColumnNum){
 		log.innerText+="\n";
 		mlognum=0;
+		var targetY = $('#log').offset().top;
+		var target2Y = $(log).offset().top;
+		var target3Y = $('#log').offset().bottom;
+		var target4Y = $(log).offset().bottom;
 	}
+
+
 }
 
 function inputDeviceSelect2(e)
