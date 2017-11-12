@@ -94,3 +94,9 @@ function handleMIDIMessage2( event ) {
 	}
 
 }
+
+function inputDeviceSelect2(e)
+{
+	inputDeviceSelect(e);
+	input.onmidimessage = handleMIDIMessage2;
+}
