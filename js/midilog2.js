@@ -29,6 +29,7 @@ function handleMIDIMessage2( event ) {
 
 	if(str[0]=='f' || str[0]=='F' ){
 		if(mlognum!=0){
+			log.innerText+="\n";
 			log.innerText+=str;
 			log.innerText+="\n";
 			mlognum=0;
