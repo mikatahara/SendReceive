@@ -19,7 +19,7 @@ function makeMassage( event ) {
 	if( event.data.length>1) {
 
 		str = event.data[0].toString(16) + " ";
-		for(i=1,k=0; i<event.data.length; i++, k++){
+		for(i=1,k=0; i<Math.min(event.data.length,3); i++, k++){
 				if(event.data[i]<0x10) str += "0";
 				str += event.data[i].toString(16);
 				str += " ";
@@ -55,31 +55,21 @@ function shiftLog()
 	}
 }
 
+function shiftColumn()
+{
+	var i,j;
+	for(i=0; i<LineNum-1; i++){
+		for(j=0; j<ColumnNum; j++)
+			strlog[i][j]=strlog[i+1][j];
+		}
+	}
+}
 
 function handleMIDIMessage2( event ) {
-	var i;
+	var i,j;
 	var ml1,mc1;
 
 	makeMassage( event );
-
-/*	if(str[0]=="f"){
-		if(mlognum>LineNum-8){
-			while(mlognum!=LineNum-8){
-				shiftLog();
-				mlognum--;
-			}
-		} else {
-			while((mlognum%8)!=0){
-				strlog[mlognum]="";
-				mlognum++;
-				if(mlognum<LineNum-1) mlognum++;
-			}
-		}
-		strlog[mlognum]=str;
-	} else {
-		strlog[mlognum]=str;
-	}
-*/
 
 	ml1 = Math.floor(mlognum/ColumnNum);
 	mc1 = mlognum-ml1*ColumnNum;
