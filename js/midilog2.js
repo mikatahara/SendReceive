@@ -33,12 +33,10 @@ function handleMIDIMessage2( event ) {
 	if(mlognum>=ColumnNum){
 		log.innerText+="\n";
 		mlognum=0;
-		var targetY = $('#log').offset().top;
-		var target2Y = $(log).offset().top;
-		var target3Y = $('#log').height();
-		var target4Y = $(log).height();
+//		var targetY = $('#log').offset().top;
+		var targetY = $(log).height();
+		$(log).scrollTop(targetY);
 	}
-
 
 }
 
