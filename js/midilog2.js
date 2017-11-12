@@ -32,7 +32,11 @@ function handleMIDIMessage2( event ) {
 			log.innerText+=str;
 			log.innerText+="\n";
 			mlognum=0;
+		} else {
+			log.innerText+=str;
+			log.innerText+="\n";
 		}
+
 	} else {
 
 		log.innerText+=str;
