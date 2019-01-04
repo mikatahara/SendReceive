@@ -25,7 +25,7 @@
 	white-space:pre;
 	font-family:Courier New, monospace;
 	font-size:1.0em;
-	overflow:auto;
+	overflow:scroll;
 }
 
 #tlog {
@@ -36,7 +36,7 @@
 	white-space:pre;
 	font-family:Courier New, monospace;
 	font-size:1.0em;
-	overflow:auto;
+	overflow:scroll;
 }
 
 #bkg {

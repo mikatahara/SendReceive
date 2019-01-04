@@ -9,6 +9,8 @@ function makeMassage( event ) {
 	var i,k;
 	str=null;
 
+	if(stoplog.value==0) return;
+
 	if( event.data[0] ==0xFE ) return;
 
 	if( event.data.length>1) {
@@ -32,30 +34,32 @@ function handleMIDIMessage2( event ) {
 	makeMassage( event );
 
 	if(str[0]=='f' || str[0]=='F' ){
+		console.log(log.scrollTop);
+		log.scrollTop=500;
 		if(mlognum!=0){
-			log.innerText+="\n";
-			log.innerText+=str;
-			log.innerText+="\n";
+//			log.innerText+="\n";
+//			log.innerText+=str;
+//			log.innerText+="\n";
+			log.innerHTML+="\n";
+			log.innerHTML+=str;
+			log.innerHTML+="\n";
 			mlognum=0;
 		} else {
-			log.innerText+=str;
-			log.innerText+="\n";
+			log.innerHTML+=str;
+			log.innerHTML+="\n";
 		}
 
 	} else {
-
-		log.innerText+=str;
-		log.innerText+=" ";
+		log.innerHTML+=str;
+		log.innerHTML+=" ";
 		mlognum++;
 		if(mlognum>=ColumnNum){
-			log.innerText+="\n";
+			log.innerHTML+="\n";
 			mlognum=0;
 		}
 	}
 
-	var targetY = $(log).offset().top+$(log).height();
-	$(log).scrollTop(targetY);
-
+    log.scrollTop = log.scrollHeight;
 }
 
 function inputDeviceSelect2(e)

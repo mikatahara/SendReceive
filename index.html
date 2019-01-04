@@ -25,6 +25,23 @@ Inout Monitor:
 </div>
 <pre id="log">
 </pre>
+<button type="button" id="stoplog" value=1 onclick="stop_start();">STOP LOG</button>
+
+<script>
+
+	var stoplog=document.getElementById("stoplog");
+
+function stop_start()
+{
+	if(stoplog.value==0){
+		stoplog.value=1;
+		stoplog.innerHTML="STOP LOG";
+	} else {
+		stoplog.value=0;
+		stoplog.innerHTML="START LOG";
+	}
+}
+</script>
 
 <!--	------------------------------------------------------------------ -->
 <div id="sans" style="background-color: #bde9ba; position: absolute; top:28px; left:100px;">
