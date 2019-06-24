@@ -3,6 +3,7 @@ const ColumnNum=12;
 var strlog=new Array(LineNum);
 var str=null;
 var mlognum=0;
+var sysexbuf="";
 
 //add for Page 18, MIDI message monitor
 function makeMassage( event ) {
@@ -12,6 +13,8 @@ function makeMassage( event ) {
 	if(stoplog.value==0) return;
 
 	if( event.data[0] ==0xFE ) return;
+
+	if( event.data[0] ==0xF0 ) savesysex(event.data);
 
 	if( event.data.length>1) {
 
@@ -67,3 +70,17 @@ function inputDeviceSelect2(e)
 	inputDeviceSelect(e);
 	input.onmidimessage = handleMIDIMessage2;
 }
+
+function savesysex(data){
+
+	sysexbuf +="[";
+	for(var i=0; i<data.length; i++){
+		sysexbuf +="0x";
+		if(data[i]<0x10) sysexbuf += "0";
+		sysexbuf += data[i].toString(16);
+		if(i!=data.length-1) sysexbuf += ",";
+	}
+	sysexbuf += "]\n";
+	console.log(sysexbuf);
+}
+

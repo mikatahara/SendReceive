@@ -8,28 +8,74 @@
 	<script type="text/javascript" src="https://mikatahara.github.io/mywebmidiapi.js"></script>
 	<script type="text/javascript" src="js/sendreceive.js"></script>
 	<script type="text/javascript" src="js/midilog2.js"></script>
+	<script type="text/javascript" src="js/savedata.js"></script>
 	<script src="https://code.jquery.com/jquery-1.11.2.js"></script>
-	<link rel="stylesheet" media="screen" href="https://mikatahara.github.io/mywebmidiapi.css">
+<style>
+.sans { 
+	color: #eeeeee; 
+	font-family:sans-serif ;  
+	font-size: 12pt; 
+	line-height : 1.5em;
+}
+.mono { 
+	color: black; 
+	font-family:monospace ; 
+	font-size: 12pt; 
+	line-height : 1.5em;
+}
+#log {
+	width:90%;
+	height:240px;
+	position:absolute; left:28px;
+	background-color:#eeeeee;
+	font-family:Courier New, monospace;
+	font-size: 12pt; 
+	line-height : 1.05em;
+	color:#222222;
+	overflow:auto;
+	margin: 0 auto;
+	white-space:pre;
+}
+</style>
 
 <!--	-------------------------------------------------------------------- -->
 </HEAD>
-<body bgcolor="#ccccff" text="#000000" link="#0000ff" vlink="#ff00ff" 
-alink="#ff0000" style="margin-right:28px;margin-left:28px;margin-top:20px;">
+<body bgcolor="#222222" text="#eeeeee" link="#eeee22" vlink="#22ee22" 
+alink="#22eeee" style="margin-right:28px;margin-left:28px;margin-top:20px;">
 <br>
 <!--	-------------------------------------------------------------------- -->
-<center><h2>Send And Receive MIDI<h2></center>
+<h2>Send And Receive MIDI<h2>
+
+<!--	------------------------------------------------------------------ -->
+<div class="sans">
+Select MIDI Port<br>
+<form name="input_device_select">
+Input Device:
+<select name="ids" onChange="inputDeviceSelect2(this);">
+<option value="0">No Device
+</select>
+</form>
+
+<form name="output_device_select">
+Output Device:
+<select name="ids" onChange="outputDeviceSelect(this);">
+<option value="0">No Device
+</select>
+</form>
+</div>
+
+<!--	-------------------------------------------------------------------- -->
 
 <br>
-<div id="sans">
+<div class="sans">
 Inout Monitor:
+<button type="button" id="stoplog" value=1 onclick="stop_start();">STOP LOG</button>
 </div>
 <pre id="log">
 </pre>
-<button type="button" id="stoplog" value=1 onclick="stop_start();">STOP LOG</button>
 
 <script>
-
-	var stoplog=document.getElementById("stoplog");
+var stoplog=document.getElementById("stoplog");
 
 function stop_start()
 {
@@ -42,41 +88,39 @@ function stop_start()
 	}
 }
 </script>
-
-<!--	------------------------------------------------------------------ -->
-<div id="sans" style="background-color: #bde9ba; position: absolute; top:28px; left:100px;">
-<table>
-<tr><td colspan="3" align="center"><b>Select MIDI Port</b></td></tr>
-<tr><td>Input Device:
-<form name="input_device_select">
-<select name="ids" onChange="inputDeviceSelect2(this);">
-<option value="0">No Device
-</select>
-</form>
-</td><td width="40"></td><td>
-Output Device:
-<form name="output_device_select">
-<select name="ids" onChange="outputDeviceSelect(this);">
-<option value="0">No Device
-</select>
-</form>
-</td></tr></table>
-</div>
-<!--	-------------------------------------------------------------------- -->
-
 <br>
 
 <!--	-------------------------------------------------------------------- -->
-<br>
-<div id="sans">
+<br><br>
+<div class="sans" style="position: absolute; top:500px;">
 Output MIDI:<br>
-<textarea name="contests" cols="128" rows="4" id="doc_ment0"></textarea> 
-<button onclick="sendmidi_id(ex_id0)">send</button><br>
-<textarea name="contests" cols="128" rows="4" id="doc_ment1"></textarea> 
-<button onclick="sendmidi_id(ex_id1)">send</button><br>
-<textarea name="contests" cols="128" rows="4" id="doc_ment2"></textarea>
-<button onclick="sendmidi_id(ex_id2)">send</button><br> 
+<textarea name="contests" cols="128" rows="4" id="doc_ment0"></textarea> <br>
+<button onclick="sendmidi_id(ex_id0)">send</button><br><br>
+<textarea name="contests" cols="128" rows="4" id="doc_ment1"></textarea> <br>
+<button onclick="sendmidi_id(ex_id1)">send</button><br><br>
+<textarea name="contests" cols="128" rows="4" id="doc_ment2"></textarea> <br>
+<button onclick="sendmidi_id(ex_id2)">send</button><br> <br>
+
 <!--	------------------------------------------------------------------ -->
+<form name="saveload">
+<table border="0"><tr>
+<tr>
+<td>
+FILE:
+</td>
+<td>
+<input type="text" name="filename" id="file_name" size="16" value=savesysex.txt width="100"></input>
+</td>
+<td width="80" align="center">
+<input type="button" value="save" onClick="savedata();">
+</td>
+</tr>
+</table>
+</form>
+<!--	------------------------------------------------------------------ -->
+<br>
+<br>
+<br>
 
 </BODY>
 <!--	-------------------------------------------------------------------- -->
