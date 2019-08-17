@@ -68,7 +68,7 @@ function handleMIDIMessage2( event ) {
 function inputDeviceSelect2(e)
 {
 	inputDeviceSelect(e);
-	input.onmidimessage = handleMIDIMessage2;
+	if(input!=null) input.onmidimessage = handleMIDIMessage2;
 }
 
 function savesysex(data){
