@@ -11,8 +11,9 @@
 - When you open this page you have following view.
 
 <br>
-<img src="https://mikatahara.github.io/SendReceive/endreceive.png">
+<img src="https://mikatahara.github.io/SendReceive/sendreceive.png">
 <br>
+
 
 - In the first block, MIDI messages from a musical instrument are displayed.
 - And next three blocks are you can enter MIDI mesages in these box by Hex.
