@@ -16,7 +16,7 @@
 
 
 - In the first block, MIDI messages from a musical instrument are displayed.
-- And next three blocks are you can enter MIDI mesages in these box by Hex.
+- And next three blocks are you can enter MIDI mesages in these box by Hex.<br>
 -- For example, F0 1A 2B 3C 4D 5E 6F F7
 - And push the send button, messages are sends to a musical instrument.
 
